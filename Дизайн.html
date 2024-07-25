@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="styles.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бенто-торт Москва</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<header class="site-header">
+    <div class="header-main">
+        <a href="#" class="brand"><img src="./лого.png" alt="" height="175px" width="100px" class="img-1" style="margin-top: 5px;"></a>
+        <div class="text-field">
+            <input class="text-field__input" type="text" name="login" id="login" placeholder="Search" value="">
+        </div>
+        <nav>
+            <ul class="menu-bar">
+                <li><a href="Главная.html" class="menu-bar-item">Главная страница</a> </li>
+                <li><a href="index.html" class="menu-bar-item">Бенто-торты</a></li>
+                <li><a href="Дизайн.html" class="menu-bar-item">Десерты</a></li>
+                <li><a href="Свечи.html" class="menu-bar-item">Свечи и открытки</a></li>
+                <li><div class="buttons-wrapper">
+                    <div><a class="click-btn btn-style2" href="./cart.html">Корзина</a></div>
+                </li>
+            </ul>
+        </nav>
+</header>
+<body>
+        <div class="main-body">
+           
+            <div class="hotel-block">
+                <img src="https://balthazar.club/uploads/posts/2022-10/1666326884_47-balthazar-club-p-vanilnie-kapkeiki-s-kremom-chiz-pinterest-49.jpg" alt="" class="hotel-1">
+                <h5>Капкейки "Нежность"</h5>
+                <p class="chertochka"></p>
+                <h2></h2>
+                <button class="click-btn btn-style2" onclick="addToCart('Капкейки &quot;Нежность&quot;')">В корзину</button>
+            </div>
+            <div class="hotel-block">
+                <img src="http://klublady.ru/uploads/posts/2022-02/1645074241_48-klublady-ru-p-tort-s-kapkeikami-na-svadbu-foto-48.jpg" alt="" class="hotel-1">
+                <h5>Капкейки "Цветочный сад"</h5>
+                <p class="chertochka"></p>
+                <h2></h2>
+                <button class="click-btn btn-style2" onclick="addToCart('Капкейки &quot;Цветочный сад&quot;')">В корзину</button>
+            </div>
+            <div class="hotel-block">
+                <img src="https://havio.club/uploads/posts/2023-02/1676116428_havio-club-p-kapkeiki-prazdnichnie-pinterest-13.jpg" alt="" class="hotel-1">
+                <h5>Капкейки "Клубника в кокосе"</h5>
+                <p class="chertochka"></p>
+                <h2></h2>
+                <button class="click-btn btn-style2" onclick="addToCart('Капкейки &quot;Клубника в кокосе&quot;')">В корзину</button>
+            </div>
+            <div class="hotel-block">
+                <img src="https://i.pinimg.com/originals/56/fe/05/56fe05365e1bcf0b58f5d2f7cdf34f1b.jpg" alt="" class="hotel-1">
+                <h5>Капкейк "Единорог"</h5>
+                <p class="chertochka"></p>
+                <h2></h2>
+                <button class="click-btn btn-style2" onclick="addToCart('Капкейк &quot;Единорог&quot;')">В корзину</button>
+            </div>
+            <div class="hotel-block">
+                <img src="http://klublady.ru/uploads/posts/2022-02/1644813903_49-klublady-ru-p-traifl-desert-foto-50.jpg" alt="" class="hotel-1">
+                <h5>Трайфл десерт</h5>
+                <p class="chertochka"></p>
+                <h2></h2>
+                <button class="click-btn btn-style2" onclick="addToCart('Трайфл десерт')">В корзину</button>
+            </div>
+            <div class="hotel-block">
+                <img src="https://www.funnyart.club/uploads/posts/2022-02/1644933916_36-www-funnyart-club-p-makaruni-fon-krasivo-44.jpg" alt="" class="hotel-1">
+                <h5>Макаруны</h5>
+                <p class="chertochka"></p>
+                <h2></h2>
+                <button class="click-btn btn-style2" onclick="addToCart('Макаруны')">В корзину</button>
+            </div>
+        </div>
+        <script>
+    
+            function addToCart(itemName, itemImage, itemPrice) {
+                var selectedItems = JSON.parse(localStorage.getItem("selectedItems")) || [];
+                var existingItem = selectedItems.find(function(item) {
+                    return item[0] === itemName;
+                });
+    
+                if (existingItem) {
+                    existingItem[1]++;
+                } else {
+                    selectedItems.push([itemName, 1]);
+                }
+    
+                localStorage.setItem("selectedItems", JSON.stringify(selectedItems));
+                console.log(selectedItems);
+            }
+        </script>
+</body>
+<footer>
+    <div class="icons-list">
+        <li class="icons">Phone number - 8 945 654 65 93</li>
+        <li class="icons">Social Network - n.alexxcake@gmail.com</li>
+    <div>
+</footer>
+</html>
